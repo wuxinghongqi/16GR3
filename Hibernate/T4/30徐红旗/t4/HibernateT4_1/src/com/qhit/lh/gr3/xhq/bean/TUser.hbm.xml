@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-12-14 20:20:10 by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="db_user" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.qhit.lh.gr3.cyh.t4.bean.TUser"
+		optimistic-lock="version" polymorphism="implicit" schema="dbo"
+		select-before-update="false" table="t_user">
+		<id name="uid" type="java.lang.Integer">
+			<column name="uid" />
+			<generator class="identity" />
+		</id>
+		<property generated="never" lazy="false" name="uname"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="20" name="uname" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="uage"
+			optimistic-lock="true" type="int" unique="false">
+			<column name="uage" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="birthday"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="20" name="birthday" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="deptid"
+			optimistic-lock="true" type="java.lang.Integer" unique="false" insert="false" update="false">
+			<column name="deptid" not-null="true" />
+		</property>
+		<!-- 1-1关联账号对象 -->
+	<one-to-one name="info" class="com.qhit.lh.gr3.cyh.t4.bean.TInfo" cascade="all"></one-to-one>
+		<!-- n-1关联部门对象 -->
+	<many-to-one name="dept" class="com.qhit.lh.gr3.cyh.t4.bean.TDept" column="deptid" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

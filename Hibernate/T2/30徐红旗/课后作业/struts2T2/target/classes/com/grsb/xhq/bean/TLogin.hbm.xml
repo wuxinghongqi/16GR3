@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-12-16 21:51:48 by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="db_Login" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.qhit.cyh.bean.TLogin" optimistic-lock="version" polymorphism="implicit" schema="dbo" select-before-update="false" table="t_login">
+        <id name="uid" type="java.lang.Integer">
+            <column name="uid"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="uname" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="uname" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="upwd" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="upwd" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

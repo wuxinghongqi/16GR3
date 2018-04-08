@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-12-20 20:21:49 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.qhit.lh.gr3.cyh.ht6.bean.TRole" table="t_role"
+		schema="dbo" catalog="db_Manager">
+		<id name="rid" type="int">
+			<column name="rid" />
+			<generator class="native" />
+		</id>
+		<property name="rname" type="string">
+			<column name="rname" length="20" not-null="true" />
+		</property>
+		<property name="rmsg" type="string">
+			<column name="rmsg" length="20" not-null="true" />
+		</property>
+		<!-- 多对多 -->
+		<set name="infos" table="role_userinfo" lazy="false" cascade="save-update">
+			<key column="rid" />
+			<many-to-many class="com.qhit.lh.gr3.cyh.ht6.bean.TUserinfo"
+				column="uid" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="sdf" extends="struts-default" namespace="/" strict-method-invocation="true">
+		<action name="aa" class="com.qhit.cyh.action.HelloWorld">
+			<result name="zxc">/hello.jsp</result>
+		</action>
+		<action name="Llogin" class="com.qhit.cyh.action.LoginAction">
+			<result name="chengg">/WEB-INF/jsp/chengg.jsp</result>
+			<result name="shibai">Login.jsp</result>
+		</action>
+		<action name="OneStruts" class="com.qhit.cyh.action.OneStrutsT01">
+			<result name="HelloOneS">/WEB-INF/jsp/MyOne.jsp</result>		
+		</action>
+	</package>
+</struts>

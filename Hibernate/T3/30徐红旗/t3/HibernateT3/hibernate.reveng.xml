@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="t_user" schema="dbo" catalog="db_user"
+		class="com.qhit.lh.cyh.t3.bean.User">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_info" schema="dbo" catalog="db_user"
+		class="com.qhit.lh.cyh.t3.bean.Info">
+		<primary-key>
+			<generator class="foreign"></generator>
+		</primary-key>
+	</table>
+<table name="t_dept" schema="dbo" catalog="db_user"
+	class="com.qhit.lh.cyh.t3.bean.Dept">
+	<primary-key>
+		<generator class="native"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

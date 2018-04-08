@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+  <property name="hibernate.connection.password">123456</property>
+  <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=db_user</property>
+  <property name="hibernate.connection.username">sa</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+  <property name="hibernate.show_sql">true</property>
+  <mapping resource="com/qhit/gr3/cyh/ht7/bean/TDept.hbm.xml"/>
+  <mapping resource="com/qhit/gr3/cyh/ht7/bean/TUser.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

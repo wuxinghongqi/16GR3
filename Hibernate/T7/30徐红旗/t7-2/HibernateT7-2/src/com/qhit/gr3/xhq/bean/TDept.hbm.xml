@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-12-22 19:27:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.qhit.gr3.cyh.ht7.bean.TDept" table="t_dept" schema="dbo" catalog="db_user">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="dname" type="string">
+            <column name="dname" length="20" not-null="true" />
+        </property>
+        
+        <set name="users" lazy="false">
+        <key column="id"/>
+        <one-to-many class="com.qhit.gr3.cyh.ht7.bean.TDept"/>
+        </set>
+    </class>
+</hibernate-mapping>

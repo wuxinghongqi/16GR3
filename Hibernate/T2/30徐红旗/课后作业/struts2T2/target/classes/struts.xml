@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="fgh" extends="struts-default">
+	<!--定义拦截器 -->
+		<interceptors>
+			<interceptor name="MyOneInterceptor"
+				class="com.grsb.cyh.interceptor.MyOneInterceptor"></interceptor>
+			<interceptor name="TwoInterceptor"
+				class="com.grsb.cyh.interceptor.TwoInterceptor"></interceptor>
+		</interceptors>
+
+		<action name="Login" class="com.grsb.cyh.action.HelloAction">
+		<!--引用拦截器 -->
+			<interceptor-ref name="timer"></interceptor-ref>
+<!-- 			<interceptor-ref name="TwoInterceptor"></interceptor-ref> -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="chengg">/WEB-INF/jsp/chengg.jsp</result>
+			<result name="shibai">index.jsp</result>
+			<result name="success">/WEB-INF/jsp/Out.jsp</result>
+		</action>
+	</package>
+</struts>
