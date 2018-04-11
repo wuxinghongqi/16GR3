@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-12-14 20:20:10 by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="db_user" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.qhit.lh.gr3.cyh.t4.bean.TInfo"
+		optimistic-lock="version" polymorphism="implicit" schema="dbo"
+		select-before-update="false" table="t_info">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="foreign">
+				<param name="property">tUser</param>
+			</generator>
+		</id>
+		<property generated="never" lazy="false" name="name"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="20" name="name" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="account"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="20" name="account" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="pwd"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="20" name="pwd" not-null="true" />
+		</property>
+		<!-- 1-1关联账号对象 -->
+		<one-to-one name="tUser" class="com.qhit.lh.gr3.cyh.t4.bean.TUser"></one-to-one>
+	</class>
+</hibernate-mapping>

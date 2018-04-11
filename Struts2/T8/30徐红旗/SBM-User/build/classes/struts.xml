@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.multipart.maxSise" value="1564845613" />
+	<package name="LoginUserPackAge" namespace="/" extends="struts-default"
+		strict-method-invocation="true">
+		<action name="userlogin_*" class="com.qhit.lh.gr3.cyh.user.action.UserAction"
+			method="{1}">
+			<interceptor-ref name="defaultStack">
+				<param name="file Upload.allowedExtensions">.png,.jpg,.JPEG,.gif</param>
+				<param name="file Upload.maximumSize">123456789</param>
+			</interceptor-ref>
+			<result name="userSuccess">/jsp/admin_index.jsp</result>
+			<result name="index">index.jsp</result>
+			<result name="userAdd">/jsp/userAdd.jsp</result>
+			<result name="Success" type="redirectAction">userlogin_userlist</result>
+			<result name="update">/jsp/userUp.jsp</result>
+			<result name="userAdmin">/jsp/userAdmin.jsp</result>
+			<result name="input">/jsp/input.jsp</result>
+			<result name="userUp">/jsp/userUp.jsp</result>
+			<result name="admin_left">/jsp/admin_left.jsp</result>
+			<allowed-methods>login,userlist,fileUpload,delUser,getUserById,uptUser,getUserByInfo,exit</allowed-methods>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <!-- struts2的action必须放在一个指定的包空间下定义 -->
+    <package name="usermanager" extends="struts-default">
+    <!-- 定义处理请求URL为login.action的Action -->
+    <interceptors>
+        <interceptor name="Check" class=""></interceptor>
+    </interceptors>
+        <action name="hello" class="demo.web.HelloAction">
+        <!-- 定义处理结果字符串和资源之间的映射关系 -->
+        <interceptor-ref name="timer"/>
+            <result name="success">/jsp/success.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+    </package>
+    </struts>

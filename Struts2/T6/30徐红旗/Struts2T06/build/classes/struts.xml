@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- 启用自动动态方法的调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.custom.i18n.resources" value="global"></constant>
+	<!-- 全局配置 -->
+    <package name="default" namespace="/" extends="struts-default">
+
+        <global-results>
+            <result name="error">/WEB-INF/jsp/error.jsp</result>
+        </global-results>
+
+<!--         <global-exception-mappings> -->
+<!--             <exception-mapping exception="java.lang.Exception" result="error"/> -->
+<!--         </global-exception-mappings> -->
+    </package>
+    <!-- 模块化管理包 -->
+    <package name="usermanager" namespace="/" strict-method-invocation="false" extends="default">
+    <action name="local" class="com.yzs.t6.action.LocaAction">
+    <result name="success">/jsp/login.jsp</result>
+    </action>
+    	<action name="*_User" class="com.yzs.t6.action.UserAction" method="{1}">
+    	<result name="input">/jsp/login.jsp</result>
+    	<result name ="loginSuccess">/jsp/welcome.jsp</result>
+    	</action>
+    </package>
+</struts>
